@@ -1,5 +1,5 @@
 {
-    "name": "omnipay/ccavenue",
+    "name": "xepan/ccavenue",
     "type": "library",
     "description": "CC Avenue Payment Gateway for OmniPay ",
     "homepage": "https://github.com/xepan/omnipay_ccavenue",
