@@ -13,7 +13,7 @@
         }
     ],
     "source": {
-        "url": "git@github.com:xepan/omnipay_ccavenue.git",
+        "url": "git@github.com:xepan/ccavenue.git",
         "type": "git",
         "reference": "origin/master"
     },
