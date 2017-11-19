@@ -8,11 +8,11 @@ namespace Omnipay\CCAvenue\Message;
 class AuthorizeRequest extends AbstractRequest
 {
     public function getData()
-    {   
+    {
 
         $this->validate('currency', 'amount');
         $data = $this->getBaseData();
-        
+
         $data['signed_date_time'] = gmdate("Y-m-d\TH:i:s\Z");
         $data['unsigned_field_names'] = 'card_type,card_number,card_expiry_date';
         $data['signed_field_names'] = implode(',', array_keys($data)) . ',signed_field_names';
@@ -91,7 +91,7 @@ class AuthorizeRequest extends AbstractRequest
             'transaction_type' => $this->getTransactionType(),
             'merchant_id' => $this->getProfileId(),
             'tid' => $this->parameters->get('transactionId'),
-            'order_id' => $this->parameters->get('transactionId'),
+            'order_id' => $this->parameters->get('orderId'),
             'amount' => $this->parameters->get('amount'),
             'currency' => $this->parameters->get('currency'),
             'redirect_url' => $this->parameters->get('returnUrl'),
