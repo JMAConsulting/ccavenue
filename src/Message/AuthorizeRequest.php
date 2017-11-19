@@ -105,7 +105,7 @@ class AuthorizeRequest extends AbstractRequest
             'billing_country'=> $this->parameters->get('billing_country'),
             'billing_email'=> $this->parameters->get('billing_email'),
             'billing_tel'=> $this->parameters->get('billing_tel'),
-            'delivery_name'=> $this->parameters->get('billing_name'),
+            'delivery_name'=> $this->parameters->get('delivery_name'),
             'delivery_address'=> $this->parameters->get('delivery_address'),
             'delivery_city'=> $this->parameters->get('delivery_city'),
             'delivery_state'=> $this->parameters->get('delivery_state'),
