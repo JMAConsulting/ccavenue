@@ -139,4 +139,26 @@ class AuthorizeRequest extends AbstractRequest
         return 'authorization';
     }
 
+    /**
+     * Get the order ID.
+     *
+     * @return string
+     */
+    public function getOrderId()
+    {
+        return $this->getParameter('orderId');
+    }
+
+    /**
+     * Sets the order ID.
+     *
+     * @param string $value
+     *
+     * @return $this Provides a fluent interface
+     */
+    public function setOrderId($value)
+    {
+        return $this->setParameter('orderId', $value);
+    }
+
 }
