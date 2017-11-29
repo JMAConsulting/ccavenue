@@ -1,2 +1,3 @@
-# omnipay_ccavenue
-CC Avenuw for Ominpay used in xEpan Platform
+# Omnipay CCAvenue
+A usable, maintained CCAvenue Gateway for Omnipay.
+
