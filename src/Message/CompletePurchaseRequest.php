@@ -14,7 +14,7 @@ class CompletePurchaseRequest extends AuthorizeRequest
     $data = $this->httpRequest->request->all();
     $workingKey=$this->getSecretKey();   //Working Key should be provided here.
     $encResponse=$data["encResp"];     //This is the response sent by the CCAvenue Server
-    $rcvdString=decrypt($encResponse,$workingKey);    //Crypto Decryption used as per the specified working key.
+    $rcvdString=ccavenue_decrypt($encResponse,$workingKey);    //Crypto Decryption used as per the specified working key.
     
     $order_status="";
     $decryptValues=explode('&', $rcvdString);

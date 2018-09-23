@@ -51,7 +51,7 @@ class Response extends AbstractResponse implements RedirectResponseInterface
                 $merchant_data.=$key.'='.urlencode($value).'&';
             }
 
-            $encrypted_data=encrypt($merchant_data,$working_key); // Method for encrypting the data.
+            $encrypted_data=ccavenue_encrypt($merchant_data,$working_key); // Method for encrypting the data.
 
 
             // foreach ($this->getRedirectData() as $key => $value) {

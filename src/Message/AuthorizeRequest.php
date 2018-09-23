@@ -8,11 +8,11 @@ namespace Omnipay\CCAvenue\Message;
 class AuthorizeRequest extends AbstractRequest
 {
     public function getData()
-    {   
+    {
 
         $this->validate('currency', 'amount');
         $data = $this->getBaseData();
-        
+
         $data['signed_date_time'] = gmdate("Y-m-d\TH:i:s\Z");
         $data['unsigned_field_names'] = 'card_type,card_number,card_expiry_date';
         $data['signed_field_names'] = implode(',', array_keys($data)) . ',signed_field_names';
@@ -91,7 +91,7 @@ class AuthorizeRequest extends AbstractRequest
             'transaction_type' => $this->getTransactionType(),
             'merchant_id' => $this->getProfileId(),
             'tid' => $this->parameters->get('transactionId'),
-            'order_id' => $this->parameters->get('transactionId'),
+            'order_id' => $this->parameters->get('orderId'),
             'amount' => $this->parameters->get('amount'),
             'currency' => $this->parameters->get('currency'),
             'redirect_url' => $this->parameters->get('returnUrl'),
@@ -105,7 +105,7 @@ class AuthorizeRequest extends AbstractRequest
             'billing_country'=> $this->parameters->get('billing_country'),
             'billing_email'=> $this->parameters->get('billing_email'),
             'billing_tel'=> $this->parameters->get('billing_tel'),
-            'delivery_name'=> $this->parameters->get('billing_name'),
+            'delivery_name'=> $this->parameters->get('delivery_name'),
             'delivery_address'=> $this->parameters->get('delivery_address'),
             'delivery_city'=> $this->parameters->get('delivery_city'),
             'delivery_state'=> $this->parameters->get('delivery_state'),
@@ -137,6 +137,28 @@ class AuthorizeRequest extends AbstractRequest
     public function getTransactionType()
     {
         return 'authorization';
+    }
+
+    /**
+     * Get the order ID.
+     *
+     * @return string
+     */
+    public function getOrderId()
+    {
+        return $this->getParameter('orderId');
+    }
+
+    /**
+     * Sets the order ID.
+     *
+     * @param string $value
+     *
+     * @return $this Provides a fluent interface
+     */
+    public function setOrderId($value)
+    {
+        return $this->setParameter('orderId', $value);
     }
 
 }
