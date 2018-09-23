@@ -18,6 +18,10 @@ class CompletePurchaseResponse extends AbstractResponse
     return $this->data['order_status'];
   }
 
+  function getTransactionStatus(){
+    return $this->getOrderStatus();
+  }
+
   public function getTransactionReference()
   {
     return isset($this->data['req_reference_number']) ? $this->data['req_reference_number'] : null;
