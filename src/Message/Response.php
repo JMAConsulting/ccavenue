@@ -28,7 +28,7 @@ class Response extends AbstractResponse implements RedirectResponseInterface
         return FALSE;
     }
 
-    public function redirect(){  
+    public function redirect() {
         $this->getRedirectResponse()->send();
         exit;
     }
@@ -99,7 +99,7 @@ class Response extends AbstractResponse implements RedirectResponseInterface
 
     public function isTransparentRedirect()
     {
-      return TRUE;
+      return FALSE;
     }
 
     public function getRedirectUrl()
